@@ -7,8 +7,34 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <button ion-button (click)="test()">test</button>
+  <button ion-button (click)="testLG()">testLG</button>
+
+  <button ion-button (click)="prendrephoto()">prendre les photos</button>
+
+  <!-- <button ion-button (click)="preview()">Preview</button>
+  <button ion-button (click)="takePic()">Photo!</button>
+  <button ion-button (click)="getPicture()">Voir les photos</button>
+  <button ion-button (click)="timeToClose()">temps de fermeture</button> -->
+  <button ion-button (click)="list()">list</button>
+  <!-- <button ion-button (click)="exifExposureTime()">set Exif Exposure time</button> -->
+  <button ion-button (click)="prendre()" style="position:absolute; right:0px; top:0px; width:96px;">take</button>
+  <button ion-button (click)="implement()">external plugin</button>
+  <!-- <ion-list *ngIf="picture">
+    <ion-item *ngFor="let pic of picture">
+      <img src="{{pic}}">
+    </ion-item>
+  </ion-list> -->
+  <ion-list *ngIf="code">
+    <ion-item *ngFor="let c of code">
+      {{c}}
+    </ion-item>
+  </ion-list>
+
+  <img src="{{pic}}" (load)="loaded($event)"/>
+
+
+  
 </ion-content>
+<script src="assets/js/three.js"></script>
+
